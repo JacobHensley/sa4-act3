@@ -12,7 +12,14 @@ while True:
         break
     else:
         print("Try again! or type q to exit.")
+
+        if int(guess) > number:
+            print("Lower, try again!")
+        elif int(guess) < number:
+            print("Higher, try again!")
+
         attempts_left -= 1
         if attempts_left <= 0:
             print("You have run out of attempts.")
             break
+
