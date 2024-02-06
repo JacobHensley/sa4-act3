@@ -1,8 +1,9 @@
 number = 10
+attempts_left = 5
 print("I'm thinking of a number...")
 
 while True:
-    guess = input("What number am I thinking of? ")
+    guess = input(f"What number am I thinking of? You have {attempts_left} attempts left.")
     if guess == 'q':
         print(f"Sorry! The number was {number}.")
         break
@@ -11,3 +12,7 @@ while True:
         break
     else:
         print("Try again! or type q to exit.")
+        attempts_left -= 1
+        if attempts_left <= 0:
+            print("You have run out of attempts.")
+            break
